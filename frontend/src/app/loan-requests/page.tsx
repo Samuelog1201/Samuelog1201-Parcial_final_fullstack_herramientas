@@ -13,7 +13,7 @@ export default async function LoanRequestsPage({ searchParams }: LoanRequestsPag
   // TODO FRONT-A: agregar el formulario GET de filtro usando tools y la opción All tools.
   // TODO FRONT-A: mostrar las solicitudes y sus enlaces al comprobante correspondiente.
 
-  //Aquí es donde filtramos usando los query params de la URL
+  //Aquí es donde filtramos usando los query params de la URL - repo Libs_and_roles
   const { toolId } = await searchParams; //De aquí tomar el valor de la URL
 
   const selectedToolIds = Array.isArray(toolId) ? toolId : toolId ? [toolId] : [];
@@ -37,6 +37,11 @@ export default async function LoanRequestsPage({ searchParams }: LoanRequestsPag
       <Link className="button" href="/loan-requests/new">New request</Link>
       <section className="panel" aria-label="Loan requests">
         <p>Complete the request list and its filter.</p>
+      </section>
+          <section className="tools-grid" aria-label="Tools">
+        {selectedToolIds?.map((tools) => (
+          <div key={tools.id} />
+        ))}
       </section>
     </main>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+// import { apiFetch } from "../../lib/api";
 
 type ReceiptPageProps = { params: Promise<{ id: string }> };
 
